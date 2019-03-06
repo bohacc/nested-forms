@@ -1,0 +1,9 @@
+<p>
+  nested-form works!
+</p>
+<form [formGroup]="form">
+  <input type="text" formControlName="firstName">
+  <input type="text" formControlName="lastName">
+  <input type="text" formControlName="other">
+  <app-nested-form-second></app-nested-form-second>
+</form>
