@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ControlContainer, FormControl, FormGroup, FormGroupDirective } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,8 @@ import { ControlContainer, FormControl, FormGroup, FormGroupDirective } from '@a
       provide: ControlContainer,
       useExisting: FormGroupDirective
     }
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NestedFormThirdComponent implements OnInit {
   public form: FormGroup;
