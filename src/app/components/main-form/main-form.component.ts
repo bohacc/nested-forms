@@ -9,6 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class MainFormComponent implements OnInit {
   public mainForm: FormGroup;
+  public formValue: any;
 
   constructor() {
     this.mainForm = new FormGroup({
@@ -20,6 +21,14 @@ export class MainFormComponent implements OnInit {
 
   ngOnInit() {
     console.log('OnInit - MainFormComponent');
+    this.formValue = this.mainForm.getRawValue();
+    this.mainForm.valueChanges
+      .subscribe(() => {
+        this.refresh();
+      });
   }
 
+  public refresh() {
+    this.formValue = this.mainForm.getRawValue();
+  }
 }

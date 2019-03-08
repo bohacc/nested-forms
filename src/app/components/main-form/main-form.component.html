@@ -10,8 +10,8 @@
 
 <div class="card bg-dark">
   <div class="card-body">
-    <pre class="text-white">{{mainForm.getRawValue() | json}}</pre>
+    <pre class="text-white">{{formValue | json}}</pre>
   </div>
 </div>
 
-<button class="btn btn-primary">Refresh</button>
+<button class="btn btn-primary" (click)="refresh()">Refresh</button>
