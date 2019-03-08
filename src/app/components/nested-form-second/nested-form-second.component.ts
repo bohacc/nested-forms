@@ -18,12 +18,14 @@ export class NestedFormSecondComponent implements OnInit {
   constructor(
     private parent: FormGroupDirective
   ) {
+    console.log('Constructor - NestedFormSecondComponent');
     console.log(this.parent.form);
   }
 
   ngOnInit() {
     this.form = this.parent.form;
-    this.form.addControl('otherSecond', new FormControl('second', []));
+    this.form.addControl('country', new FormControl('Česká republika', []));
+    console.log('OnInit - NestedFormSecondComponent');
     console.log(this.parent.form);
   }
 

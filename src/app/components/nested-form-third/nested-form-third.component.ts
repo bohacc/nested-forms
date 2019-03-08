@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ControlContainer, FormControl, FormGroup, FormGroupDirective } from '@angular/forms';
 
 @Component({
-  selector: 'app-nested-form',
-  templateUrl: './nested-form.component.html',
-  styleUrls: ['./nested-form.component.scss'],
+  selector: 'app-nested-form-third',
+  templateUrl: './nested-form-third.component.html',
+  styleUrls: ['./nested-form-third.component.scss'],
   viewProviders: [
     {
       provide: ControlContainer,
@@ -12,19 +12,20 @@ import { ControlContainer, FormControl, FormGroup, FormGroupDirective } from '@a
     }
   ]
 })
-export class NestedFormComponent implements OnInit {
+export class NestedFormThirdComponent implements OnInit {
   public form: FormGroup;
 
   constructor(
     private parent: FormGroupDirective
   ) {
+    console.log('Constructor - NestedFormThirdComponent');
     console.log(this.parent.form);
   }
 
   ngOnInit() {
     this.form = this.parent.form;
-    this.form.addControl('other', new FormControl());
+    this.form.addControl('planet', new FormControl('Mars'));
+    console.log('OnInit - NestedFormThirdComponent');
     console.log(this.parent.form);
   }
-
 }

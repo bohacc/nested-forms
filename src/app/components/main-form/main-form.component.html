@@ -1,0 +1,17 @@
+<h3>Client (Main form)</h3>
+<form [formGroup]="mainForm" class="col-3">
+  <label for="firstName">First name</label>
+  <input type="text" id="firstName" formControlName="firstName" class="form-control form-group">
+
+  <label for="lastName">Last name</label>
+  <input type="text" id="lastName" formControlName="lastName" class="form-control form-group">
+  <app-nested-form></app-nested-form>
+</form>
+
+<div class="card bg-dark">
+  <div class="card-body">
+    <pre class="text-white">{{mainForm.getRawValue() | json}}</pre>
+  </div>
+</div>
+
+<button class="btn btn-primary">Refresh</button>
